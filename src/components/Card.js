@@ -8,9 +8,9 @@ export function Card({ card }) {
       </h2>
       <div>
         <img
-          src={card.image[Math.floor(Math.random() * card.image.length)]}
+          src={card.images[Math.floor(Math.random() * card.images.length)]}
           alt={card.title}
-          className='w-80 h-80'
+          className='sm:w-40 sm:h-40 md:w-80 lg:h-80'
         />
       </div>
     </div>

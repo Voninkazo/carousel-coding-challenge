@@ -8,7 +8,7 @@ export function Button({ onClick, isDisabled, buttonText }) {
       onClick={onClick}
       disabled={isDisabled}
       className={cn(
-        'px-8 py-4 bg-black text-white hover:bg-red',
+        'px-8 py-4 bg-black text-white',
         `${isDisabled && 'cursor-not-allowed bg-gray-400 '}`
       )}>
       {buttonText}

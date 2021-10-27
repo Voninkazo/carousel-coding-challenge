@@ -1,7 +1,7 @@
 [
   {
     "title": "First Block",
-    "image": [
+    "images": [
       "https://cdn.pixabay.com/photo/2016/11/29/04/19/ocean-1867285_960_720.jpg",
       "https://media.istockphoto.com/photos/wide-blue-sea-and-clear-sky-simplicity-in-nature-picture-id1170572918?s=612x612",
 
@@ -11,7 +11,7 @@
   },
   {
     "title": "Second Block",
-    "image": [
+    "images": [
       "https://cdn.pixabay.com/photo/2021/10/23/16/31/italy-6735340_960_720.jpg",
       "https://vinusimages.co/wp-content/uploads/2018/08/615A2471-website.jpg",
       "https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif",
@@ -20,7 +20,7 @@
   },
   {
     "title": "Third Block",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200"
@@ -28,7 +28,7 @@
   },
   {
     "title": "Fourth Block",
-    "image": [
+    "images": [
       "https://media.istockphoto.com/photos/mount-hood-oregon-picture-id1268487061?s=612x612",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -37,7 +37,7 @@
   },
   {
     "title": "Fith",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -46,7 +46,7 @@
   },
   {
     "title": "Sixthlock",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -55,7 +55,7 @@
   },
   {
     "title": "SevenenthBlock",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -65,7 +65,7 @@
   },
   {
     "title": "Eigth Block",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -76,7 +76,7 @@
 
   {
     "title": "Ninenth Block",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -85,7 +85,7 @@
   },
   {
     "title": "Tenth",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -94,7 +94,7 @@
   },
   {
     "title": "Eleventh Block",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -103,7 +103,7 @@
   },
   {
     "title": "Twelevent Block",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -112,7 +112,7 @@
   },
   {
     "title": "13 Block",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -121,7 +121,7 @@
   },
   {
     "title": "Fourteenth Block",
-    "image": [
+    "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",

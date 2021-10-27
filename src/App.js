@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import cn from 'classnames'
 
 import { Button } from './components/Button'
 import { Card } from './components/Card'
@@ -28,6 +29,7 @@ function App() {
   // Get four blocks from the array when the slice arguments change
 
   useEffect(() => {
+    // Only get 4 blocks from the list of all blocks
     setCarouselData(
       [...allBlocksData].slice(
         sliceStartIndex,
@@ -41,6 +43,7 @@ function App() {
     allBlocksData.length <= 4
 
   useEffect(() => {
+    // fetch all of the blocks
     async function fetchData() {
       const carouselData = await getCarouselData()
       setAllBlocksData(carouselData)
@@ -58,14 +61,18 @@ function App() {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className='bg-gray-200 h-screen'>
-          <div className='p-8 flex  gap-4 '>
+        <div>
+          <div className='p-8 flex  gap-4 flex-wrap'>
             {carouselData.map((card, index) => (
               <Card card={card} key={index} />
             ))}
           </div>
 
-          <div className='flex justify-center gap-6 '>
+          <div
+            className={cn(
+              'flex md:justify-center gap-6  py-8 px-6',
+              `${carouselData.length < 4 && 'max-w-md'}`
+            )}>
             <Button
               onClick={slideToLeft}
               buttonText='Prev'

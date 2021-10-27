@@ -2,20 +2,18 @@
   {
     "title": "First Block",
     "images": [
-      "https://cdn.pixabay.com/photo/2016/11/29/04/19/ocean-1867285_960_720.jpg",
-      "https://media.istockphoto.com/photos/wide-blue-sea-and-clear-sky-simplicity-in-nature-picture-id1170572918?s=612x612",
-
-      "https://media.istockphoto.com/photos/woman-rides-cruiser-bike-along-a-curving-path-through-a-mountain-picture-id1297833003?s=612x612",
-      "https://media.istockphoto.com/photos/mountain-biker-arrives-at-view-point-over-valley-mountains-and-forest-picture-id1227625037?s=612x612"
+      "https://picsum.photos/200",
+      "https://picsum.photos/200",
+      "https://picsum.photos/200"
     ]
   },
   {
     "title": "Second Block",
     "images": [
-      "https://cdn.pixabay.com/photo/2021/10/23/16/31/italy-6735340_960_720.jpg",
-      "https://vinusimages.co/wp-content/uploads/2018/08/615A2471-website.jpg",
-      "https://www.industrialempathy.com/img/remote/ZiClJf-640w.avif",
-      "https://static.addtoany.com/images/dracaena-cinnabari.jpg"
+      "https://picsum.photos/200",
+      "https://picsum.photos/200",
+      "https://picsum.photos/200",
+      "https://picsum.photos/200"
     ]
   },
   {
@@ -29,14 +27,13 @@
   {
     "title": "Fourth Block",
     "images": [
-      "https://media.istockphoto.com/photos/mount-hood-oregon-picture-id1268487061?s=612x612",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200"
     ]
   },
   {
-    "title": "Fith",
+    "title": "Fith Block",
     "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -45,7 +42,7 @@
     ]
   },
   {
-    "title": "Sixthlock",
+    "title": "Sixth Block",
     "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
@@ -54,13 +51,12 @@
     ]
   },
   {
-    "title": "SevenenthBlock",
+    "title": "Sevenenth Block",
     "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
-
-      "https://media.istockphoto.com/photos/trillium-lake-and-the-south-face-of-mt-hood-in-oregon-picture-id1126328249"
+      "https://picsum.photos/200"
     ]
   },
   {
@@ -68,9 +64,7 @@
     "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
-      "https://picsum.photos/200",
-
-      "https://media.istockphoto.com/photos/past-handlebars-of-an-electric-bicycle-on-a-dirt-path-picture-id1227624068?s=612x612"
+      "https://picsum.photos/200"
     ]
   },
 
@@ -80,16 +74,16 @@
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
-      "https://media.istockphoto.com/photos/reflections-in-trillium-lake-picture-id1154879237?s=612x612"
+      "https://picsum.photos/200"
     ]
   },
   {
-    "title": "Tenth",
+    "title": "Tenth Block",
     "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
-      "https://media.istockphoto.com/photos/mount-hood-reflecting-in-trillium-lake-at-sunset-in-mount-hood-picture-id1284156839?s=612x612"
+      "https://picsum.photos/200"
     ]
   },
   {
@@ -97,8 +91,7 @@
     "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
-      "https://picsum.photos/200",
-      "https://media.istockphoto.com/photos/female-mountain-biker-sitting-on-bike-picture-id968796290?s=612x612"
+      "https://picsum.photos/200"
     ]
   },
   {
@@ -107,16 +100,15 @@
       "https://picsum.photos/200",
       "https://picsum.photos/200",
       "https://picsum.photos/200",
-      "https://media.istockphoto.com/photos/mountain-biker-relaxes-on-patio-picture-id1141997529?s=612x612"
+      "https://picsum.photos/200"
     ]
   },
   {
-    "title": "13 Block",
+    "title": "Thirteenth Block",
     "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
-      "https://picsum.photos/200",
-      "https://media.istockphoto.com/photos/mountain-biker-relaxes-on-patio-picture-id1141997529?s=612x612"
+      "https://picsum.photos/200"
     ]
   },
   {
@@ -124,8 +116,7 @@
     "images": [
       "https://picsum.photos/200",
       "https://picsum.photos/200",
-      "https://picsum.photos/200",
-      "https://media.istockphoto.com/photos/mountain-biker-relaxes-on-patio-picture-id1141997529?s=612x612"
+      "https://picsum.photos/200"
     ]
   }
 ]

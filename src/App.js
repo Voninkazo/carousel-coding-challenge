@@ -1,54 +1,75 @@
 import React, { useEffect, useState } from 'react'
+
 import { Button } from './components/Button'
 import { Card } from './components/Card'
+import { Loading } from './components/Loading'
 
-import data from './data.json'
+import { getCarouselData } from './data-fetch-helper'
 
+const MAX_IMAGES = 4
 function App() {
   const [sliceStartIndex, setSliceStartIndex] = useState(0)
-  const [sliceEndIndex, setSliceEndIndex] = useState(4)
+  const [allBlocksData, setAllBlocksData] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   const [carouselData, setCarouselData] = useState(
-    data.slice(sliceStartIndex, sliceEndIndex)
+    allBlocksData.slice(sliceStartIndex, sliceStartIndex + MAX_IMAGES)
   )
 
   function slideToLeft() {
-    console.log('prev')
-    setSliceStartIndex(sliceStartIndex - 4)
-    setSliceEndIndex(sliceStartIndex)
+    setSliceStartIndex(sliceStartIndex - MAX_IMAGES)
   }
 
   function slideToRight() {
-    setSliceStartIndex(sliceStartIndex + 4)
-    setSliceEndIndex(sliceEndIndex + 4)
+    setSliceStartIndex(sliceStartIndex + MAX_IMAGES)
   }
 
-  // Get four block from the array when the slice arguments change
+  // Get four blocks from the array when the slice arguments change
 
   useEffect(() => {
-    setCarouselData([...data].slice(sliceStartIndex, sliceEndIndex))
-  }, [sliceEndIndex, sliceStartIndex])
+    setCarouselData(
+      [...allBlocksData].slice(sliceStartIndex, sliceStartIndex + MAX_IMAGES)
+    )
+  }, [sliceStartIndex, allBlocksData])
+
+  const isNextDisabled =
+    sliceStartIndex + MAX_IMAGES > allBlocksData.length ||
+    allBlocksData.length <= 4
+
+  useEffect(async () => {
+    const carouselData = await getCarouselData()
+    setAllBlocksData(carouselData)
+    if (carouselData) {
+      setIsLoading(false)
+    }
+  }, [])
 
   return (
     <>
-      <div className='p-8 flex gap-4'>
-        {carouselData.map((card, index) => (
-          <Card card={card} key={index} />
-        ))}
-      </div>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div>
+          <div className='p-8 flex gap-4'>
+            {carouselData.map((card, index) => (
+              <Card card={card} key={index} />
+            ))}
+          </div>
 
-      <div className='flex justify-center gap-6 '>
-        <Button
-          onClick={slideToLeft}
-          buttonText='Prev'
-          isDisabled={sliceStartIndex === 0 ? true : false}
-        />
-        <Button
-          onClick={slideToRight}
-          buttonText='Next'
-          isDisabled={sliceEndIndex === data.length ? true : false}
-        />
-      </div>
+          <div className='flex justify-center gap-6 '>
+            <Button
+              onClick={slideToLeft}
+              buttonText='Prev'
+              isDisabled={sliceStartIndex === 0}
+            />
+            <Button
+              onClick={slideToRight}
+              buttonText='Next'
+              isDisabled={isNextDisabled}
+            />
+          </div>
+        </div>
+      )}
     </>
   )
 }

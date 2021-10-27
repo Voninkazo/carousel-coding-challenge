@@ -1,51 +1,53 @@
 import React, { useEffect, useState } from 'react'
+import { Button } from './components/Button'
+import { Card } from './components/Card'
 
 import data from './data.json'
 
 function App() {
   const [sliceStartIndex, setSliceStartIndex] = useState(0)
   const [sliceEndIndex, setSliceEndIndex] = useState(4)
+
   const [carouselData, setCarouselData] = useState(
     data.slice(sliceStartIndex, sliceEndIndex)
   )
-  const [previousData, setPreviousData] = useState()
 
-  function slideToLeft() {}
+  function slideToLeft() {
+    console.log('prev')
+    setSliceStartIndex(sliceStartIndex - 4)
+    setSliceEndIndex(sliceStartIndex)
+  }
 
   function slideToRight() {
     setSliceStartIndex(sliceStartIndex + 4)
     setSliceEndIndex(sliceEndIndex + 4)
   }
 
+  // Get four block from the array when the slice arguments change
+
   useEffect(() => {
     setCarouselData([...data].slice(sliceStartIndex, sliceEndIndex))
-  }, [sliceEndIndex])
+  }, [sliceEndIndex, sliceStartIndex])
 
   return (
     <>
       <div className='p-8 flex gap-4'>
-        {carouselData.map((card, index) => {
-          return (
-            <div key={index}>
-              <h2 className='font-bold text-gray-900 text-lg leading-8'>
-                {card.title}
-              </h2>
-              <div>
-                <img src={card.image} alt={card.title} className='w-80 h-80' />
-              </div>
-            </div>
-          )
-        })}
+        {carouselData.map((card, index) => (
+          <Card card={card} key={index} />
+        ))}
       </div>
+
       <div className='flex justify-center gap-6 '>
-        <button onClick={slideToLeft} className='px-8 py-4 bg-black text-white'>
-          Previous
-        </button>
-        <button
+        <Button
+          onClick={slideToLeft}
+          buttonText='Prev'
+          isDisabled={sliceStartIndex === 0 ? true : false}
+        />
+        <Button
           onClick={slideToRight}
-          className='px-8 py-4 bg-black text-white'>
-          Next
-        </button>
+          buttonText='Next'
+          isDisabled={sliceEndIndex === data.length ? true : false}
+        />
       </div>
     </>
   )

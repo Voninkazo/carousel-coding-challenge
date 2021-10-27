@@ -18,6 +18,10 @@ function App() {
     allBlocksData.slice(sliceStartIndex, sliceStartIndex + MAX_DISPLAYED_BLOCKS)
   )
 
+  const isNextBtnDisabled =
+    sliceStartIndex + MAX_DISPLAYED_BLOCKS > allBlocksData.length ||
+    allBlocksData.length <= 4
+
   function slideToLeft() {
     setSliceStartIndex(sliceStartIndex - MAX_DISPLAYED_BLOCKS)
   }
@@ -25,22 +29,6 @@ function App() {
   function slideToRight() {
     setSliceStartIndex(sliceStartIndex + MAX_DISPLAYED_BLOCKS)
   }
-
-  // Get four blocks from the array when the slice arguments change
-
-  useEffect(() => {
-    // Only get 4 blocks from the list of all blocks
-    setCarouselData(
-      [...allBlocksData].slice(
-        sliceStartIndex,
-        sliceStartIndex + MAX_DISPLAYED_BLOCKS
-      )
-    )
-  }, [sliceStartIndex, allBlocksData])
-
-  const isNextDisabled =
-    sliceStartIndex + MAX_DISPLAYED_BLOCKS > allBlocksData.length ||
-    allBlocksData.length <= 4
 
   useEffect(() => {
     // fetch all of the blocks
@@ -56,23 +44,31 @@ function App() {
     fetchData()
   }, [])
 
+  // Get four blocks from the array when the slice arguments change
+
+  useEffect(() => {
+    // Only get 4 blocks from the list of all blocks
+    setCarouselData(
+      [...allBlocksData].slice(
+        sliceStartIndex,
+        sliceStartIndex + MAX_DISPLAYED_BLOCKS
+      )
+    )
+  }, [sliceStartIndex, allBlocksData])
+
   return (
     <>
       {isLoading ? (
         <Loading />
       ) : (
         <div>
-          <div className='p-8 flex  gap-4 flex-wrap'>
+          <div className='p-8 flex justify-center gap-4 flex-wrap'>
             {carouselData.map((card, index) => (
               <Card card={card} key={index} />
             ))}
           </div>
 
-          <div
-            className={cn(
-              'flex md:justify-center gap-6  py-8 px-6',
-              `${carouselData.length < 4 && 'max-w-md'}`
-            )}>
+          <div className={cn('flex justify-center gap-6  py-8 px-6')}>
             <Button
               onClick={slideToLeft}
               buttonText='Prev'
@@ -81,7 +77,7 @@ function App() {
             <Button
               onClick={slideToRight}
               buttonText='Next'
-              isDisabled={isNextDisabled}
+              isDisabled={isNextBtnDisabled}
             />
           </div>
         </div>

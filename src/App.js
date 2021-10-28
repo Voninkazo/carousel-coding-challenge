@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+
 import cn from 'classnames'
 
 import { Button } from './components/Button'
-import { Card } from './components/Card'
+import { Block } from './components/Block'
 import { Loading } from './components/Loading'
 
 import { getCarouselData } from './data-fetch-helper'
@@ -31,21 +32,19 @@ function App() {
   }
 
   useEffect(() => {
-    // fetch all of the blocks
-    async function fetchData() {
+    async function fetchCarouselData() {
       const carouselData = await getCarouselData()
-      setAllBlocksData(carouselData)
 
       if (carouselData) {
+        setAllBlocksData(carouselData)
         setIsLoading(false)
       }
     }
 
-    fetchData()
+    fetchCarouselData()
   }, [])
 
   // Get four blocks from the array when the slice arguments change
-
   useEffect(() => {
     // Only get 4 blocks from the list of all blocks
     setCarouselData(
@@ -65,8 +64,8 @@ function App() {
           <div
             id='card-container'
             className='p-8 flex justify-center gap-4 flex-wrap'>
-            {carouselData.map((card, index) => (
-              <Card card={card} key={index} />
+            {carouselData.map((block, index) => (
+              <Block block={block} key={index} />
             ))}
           </div>
 
@@ -74,11 +73,13 @@ function App() {
             id='button-container'
             className={cn('flex justify-center gap-6  py-8 px-6')}>
             <Button
+              id='prev'
               onClick={slideToLeft}
               buttonText='Prev'
               isDisabled={sliceStartIndex === 0}
             />
             <Button
+              id='next'
               onClick={slideToRight}
               buttonText='Next'
               isDisabled={isNextBtnDisabled}

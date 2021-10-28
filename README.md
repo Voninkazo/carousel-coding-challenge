@@ -1,71 +1,34 @@
-# Getting Started with Create React App
+## Carousel App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### View Live
 
-In the project directory, you can run:
+You can view the app live at [https://sandy-carousel-slider.netlify.app/](https://sandy-carousel-slider.netlify.app/)
 
-### `yarn start`
+### Run locally
 
-Runs the app in the development mode.\
+Run `npm install` or `yarn install`.<br>
+Run `npm start` or `yarn start`.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To run the cypress tests, you can run `yarn cy:open` or `npm run cy:open`
 
-### `yarn test`
+### Setup Notes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### I added the following packages to expedite development:
 
-### `yarn build`
+- material-ui - reusuable web components that would reduce css and css flexbox build time for all devices. Material-UI components also come with default props like `disabled` that can be easily modified with event handlers<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For this app, I wanted to display four blocks of cards, each contains an image and a title, a previous and a next button<br><br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+By defaul the previous button is disabled but it gets enabled when a user clicks on the next button to get another set of blocks. Similarly, when all blocks are shown, the next button is going to be disabled and only the previous button is active<br><br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Seperated folders are created for reusable components. All functionalities are stored in the `App.js` file where all components are being used.
+Styling is written with tailwind css.
 
-### `yarn eject`
+There are also a few cypress tests that are testing the content of the app component
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Also, pacrel is used to bundle the code because it's a zero configuration.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# carousel-coding-challenge
+Other than that, the design is not replicated from anywhere but just an imagination that came in my mind. I made the UI responsive on both mobile and desktop screens.

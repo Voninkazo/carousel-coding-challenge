@@ -62,13 +62,17 @@ function App() {
         <Loading />
       ) : (
         <div>
-          <div className='p-8 flex justify-center gap-4 flex-wrap'>
+          <div
+            id='card-container'
+            className='p-8 flex justify-center gap-4 flex-wrap'>
             {carouselData.map((card, index) => (
               <Card card={card} key={index} />
             ))}
           </div>
 
-          <div className={cn('flex justify-center gap-6  py-8 px-6')}>
+          <div
+            id='button-container'
+            className={cn('flex justify-center gap-6  py-8 px-6')}>
             <Button
               onClick={slideToLeft}
               buttonText='Prev'

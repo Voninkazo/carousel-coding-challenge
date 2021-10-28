@@ -7,27 +7,26 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "autoprefixer": "^9",
-    "babel-jest": "^26.6.0",
     "classnames": "^2.3.1",
-    "postcss": "^7",
+    "postcss": "^8.3.11",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "styled-components": "^5.3.3",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "craco start && parcel /index.html",
+    "watch:css": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --spec \"cypress/integration/app/**/*\""
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -41,5 +40,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^8.7.0",
+    "rollup-plugin-postcss": "^4.0.1"
   }
 }

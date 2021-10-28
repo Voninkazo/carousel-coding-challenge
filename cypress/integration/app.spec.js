@@ -1,4 +1,4 @@
-const LOCALHOST = 'http://localhost:3000/'
+const LOCALHOST = 'https://sandy-carousel-slider.netlify.app/'
 
 describe('App component', () => {
   it('Visits the App component', () => {

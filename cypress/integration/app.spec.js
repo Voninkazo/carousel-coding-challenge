@@ -3,33 +3,42 @@ const LOCALHOST = 'http://localhost:3000/'
 describe('App component', () => {
   it('Visits the App component', () => {
     cy.visit(LOCALHOST)
-    // cy.get('div').should('exist')
   })
-  it('must have a div container', () => {
-    cy.get('div#card-container').should('exist')
+
+  it('Must have four blocks in carousel on load', () => {
+    cy.get('div#card').should('length', '4')
   })
-  it('have h2 subheadings', () => {
+
+  it('Must have blocks with h2 elements as subdheaders', () => {
     cy.get('div#card-container')
-      .children('div.shadow-contentCardShadow')
-      .children('h2')
-      .should('exist')
+      .find('div.shadow-contentCardShadow')
+      .each(($block) => {
+        expect($block.children('h2').length).to.be.greaterThan(0)
+      })
   })
-  it('must have image tags', () => {
-    cy.get('img').should('exist')
+
+  it('Must have an image in each block', () => {
+    cy.get('div#card-container')
+      .find('#card')
+      .each(($block) => {
+        expect($block.children('img').length).to.be.greaterThan(0)
+      })
   })
-  it('has img tags with src attributes', () => {
-    cy.get('img').should('have.attr', 'src')
+
+  it('Shoud disable previous button on load but enable it on next button click', () => {
+    cy.get('button#prev').should('exist')
+    cy.get('button#prev').should('is.disabled')
+    cy.get('button#next').click()
+    cy.get('button#prev').should('is.not.disabled')
   })
-  it('has image tags with alt attribute', () => {
-    cy.get('img').should('have.attr', 'alt')
-  })
-  it('has a div that contains two buttons', () => {
-    cy.get('div#button-container').should('exist')
-  })
-  it('has a button with Prev text', () => {
-    cy.get('div#button-container > button').contains('Prev')
-  })
-  it('has a button with Nexttext', () => {
-    cy.get('div#button-container > button').contains('Next')
+
+  it('Shoud enable next button on load but disable it at the end of the carousel', () => {
+    cy.get('button#next').should('is.not.disabled')
+    // The loop generates the number of click events that are permissable
+    const numberOfPermissableClicks = 3
+    for (let clickNum = 1; clickNum < numberOfPermissableClicks; clickNum++) {
+      cy.get('button#next').click()
+    }
+    cy.get('button#next').should('is.disabled')
   })
 })

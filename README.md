@@ -16,19 +16,31 @@ To run the cypress tests, you can run `yarn cy:open` or `npm run cy:open`
 
 ### Setup Notes
 
-### I added the following packages to expedite development:
+#### I added the following packages to expedite development:
 
-- material-ui - reusuable web components that would reduce css and css flexbox build time for all devices. Material-UI components also come with default props like `disabled` that can be easily modified with event handlers<br>
+- material-ui: reusuable web components that would reduce css and css flexbox build time for all devices. Material-UI components also come with default props like `disabled` that can be modified during click events<br>
 
-For this app, I wanted to display four blocks of cards, each contains an image and a title, a previous and a next button<br><br>
+- Parcel: zero-configuration bundler to minify the code and increase application performance.
 
-By defaul the previous button is disabled but it gets enabled when a user clicks on the next button to get another set of blocks. Similarly, when all blocks are shown, the next button is going to be disabled and only the previous button is active<br><br>
+- TailwindCSS: CSS Utility library that enabed me to style the applciation faster.
 
-Seperated folders are created for reusable components. All functionalities are stored in the `App.js` file where all components are being used.
-Styling is written with tailwind css.
+- Cypress: enables end-to-end testing to ensure all code challenge requirements were satisfied.
 
-There are also a few cypress tests that are testing the content of the app component
+### How the app works
 
-Also, pacrel is used to bundle the code because it's a zero configuration.
+For this app, I wanted to display four blocks in carousel on load. Each block contains an image and a title.
+There are also a previous and next buttons that allow users to view the next set of blocks and previous blocks<br><br>
 
-Other than that, the design is not replicated from anywhere but just an imagination that came in my mind. I made the UI responsive on both mobile and desktop screens.
+By default, the previous button is disabled and gets enabled when clicking on the next button. The next button is enabled by default but gets disabled when the user views to the end of the carousel.<br><br>
+
+I wrote a series of Cypress tests to ensure all the application works as intended.
+
+### Structure of the app
+
+- Seperated folders are created for reusable components.
+- All functionalities are stored in the `App.js` file where all components are being used.
+- Cypress tests can be found in the cypress/integration folder.
+
+### Design
+
+There is not design for this app but I used my own imagination and wanted to make the UI responsive on both mobile and desktop screens.

@@ -1,6 +1,7 @@
-import data from './data.json'
-
 export async function getCarouselData() {
-  // Fake endpoint call
-  return new Promise((resolve) => setTimeout(resolve, 2000)).then(() => data)
+  return fetch('./data.json')
+    .then(async (data) => {
+      return await data.json()
+    })
+    .catch(() => alert('An error occurs when trying to fetch'))
 }
